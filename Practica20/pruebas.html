@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pruebas DOM</title>
+</head>
+<body>
+    <p>
+        parrafo principal
+    </p>
+    <script>
+        const parrafo = document.getElementsByTagName("p")[0]
+
+        console.log(parrafo);
+
+        setTimeout(() => {
+            let parrafo2 = document.createElement("P")
+            let nodoTexto = document.createTextNode("Hola mundo estoy manipulando el DOM")
+            parrafo2.appendChild(nodoTexto)
+
+            document.body.appendChild(parrafo2)
+        }, 2000);
+        setTimeout(() => {
+            parrafo.parentNode.removeChild(parrafo)
+        }, 5000);
+
+        setTimeout(() => {
+            let body = document.getElementsByTagName("body")[0]
+            alert(body.style.set)
+        }, 5000);
+
+    </script>
+
+</body>
+</html>
